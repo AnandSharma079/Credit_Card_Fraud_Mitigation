@@ -178,7 +178,7 @@ def get_model_best_estimator_and_metrics(estimator, params, kf=kf, X_train=X_tra
 
 # %%
 # Cumulatively create a table for the ROC curve
-## Create the dataframe
+# Create the dataframe
 res_table = pd.DataFrame(columns=['classifiers', 'fpr','tpr','auc'])
 
 rfc_results = get_model_best_estimator_and_metrics(
@@ -299,3 +299,6 @@ constant = 3
 datavalid = dataset[~((dataset < (quartile1 - constant * IQR)) |(dataset > (quartile3 + constant * IQR))).any(axis=1)]
 deletedrows = dataset.shape[0] - datavalid.shape[0]
 print("We have removed " + str(deletedrows) + " rows from the data as outliers")
+
+
+# Code by Anand Sharma
